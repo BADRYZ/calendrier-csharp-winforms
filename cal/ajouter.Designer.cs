@@ -43,6 +43,7 @@
             this.datefield.Name = "datefield";
             this.datefield.Size = new System.Drawing.Size(270, 29);
             this.datefield.TabIndex = 0;
+            this.datefield.TextChanged += new System.EventHandler(this.datefield_TextChanged);
             // 
             // labdate
             // 

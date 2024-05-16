@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace cal
 {
+    
     public partial class ucdays : UserControl
     {
         public static string g_day;
@@ -37,6 +40,48 @@ namespace cal
             g_day = _day; // Mettre à jour la journée globale si nécessaire
             ajouter formAjouter = new ajouter(_day, Form1._month, Form1._year);
             formAjouter.ShowDialog(); // Utiliser ShowDialog pour une fenêtre modale
+            displayR();
+        }
+        private const string connString = "server=localhost;user id=root;password=;database=restoensa";
+        private void displayR()
+        {
+            string connString = "server=localhost;user id=root;password=;database=restoensa";
+            MySqlConnection conn = new MySqlConnection(connString);
+            try
+            {
+                conn.Open();
+                string sql = "SELECT serveur.nom, shift_serveur.id_shift, shift_serveur.date FROM serveur JOIN shift_serveur ON serveur.id = shift_serveur.id_serveur WHERE shift_serveur.date = CURDATE() ORDER BY serveur.nom";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                StringBuilder displayText = new StringBuilder();
+
+                while (reader.Read())
+                {
+                    string serveurNom = reader["nom"].ToString();
+                    int shiftId = Convert.ToInt32(reader["id_shift"]);
+                    displayText.AppendLine($"{serveurNom}-{shiftId}");
+                }
+
+                display.Text = displayText.ToString();
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la récupération des données : " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

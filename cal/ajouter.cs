@@ -41,8 +41,8 @@ namespace cal
         public ajouter()
         {
             InitializeComponent();
-            
-            
+
+
 
         }
         public class ComboBoxItem
@@ -113,12 +113,14 @@ namespace cal
         {
             LoadServers();
             LoadShifts();
-            datefield.Text=ucdays.g_day+"/"+Form1._month+"/"+Form1._year;
+            //datefield.Text=ucdays.g_day+"/"+Form1._month+"/"+Form1._year;
+            datefield.Text = Form1._year + "-" + Form1._month + "-" + ucdays.g_day;
         }
         public ajouter(string day, int month, int year)
         {
             InitializeComponent();
-            datefield.Text = $"{day}/{month}/{year}";
+            // datefield.Text = $"{day}/{month}/{year}";
+            datefield.Text = $"{year}-{month}-{day}";
         }
 
         private void btncommit_Click(object sender, EventArgs e)
@@ -170,6 +172,15 @@ namespace cal
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        public string DateFieldValue
+        {
+            get { return datefield.Text; }
+        }
+
+        private void datefield_TextChanged(object sender, EventArgs e)
         {
 
         }
