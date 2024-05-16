@@ -1,0 +1,11 @@
+C:\Users\Zakaria\source\repos\cal\cal\bin\Debug\cal.exe.config
+C:\Users\Zakaria\source\repos\cal\cal\bin\Debug\cal.exe
+C:\Users\Zakaria\source\repos\cal\cal\bin\Debug\cal.pdb
+C:\Users\Zakaria\source\repos\cal\cal\obj\Debug\cal.csproj.AssemblyReference.cache
+C:\Users\Zakaria\source\repos\cal\cal\obj\Debug\cal.Form1.resources
+C:\Users\Zakaria\source\repos\cal\cal\obj\Debug\cal.Properties.Resources.resources
+C:\Users\Zakaria\source\repos\cal\cal\obj\Debug\cal.ucdays.resources
+C:\Users\Zakaria\source\repos\cal\cal\obj\Debug\cal.csproj.GenerateResource.cache
+C:\Users\Zakaria\source\repos\cal\cal\obj\Debug\cal.csproj.CoreCompileInputs.cache
+C:\Users\Zakaria\source\repos\cal\cal\obj\Debug\cal.exe
+C:\Users\Zakaria\source\repos\cal\cal\obj\Debug\cal.pdb
