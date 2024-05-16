@@ -14,6 +14,8 @@ namespace cal
     public partial class Form1 : Form
     {
         public static int _month,_year;
+        public static int g_month, g_year;
+
         public Form1()
         {
             InitializeComponent();
@@ -38,6 +40,8 @@ namespace cal
                 _year += 1;
             }
             showdays(_month, _year);
+            g_month = _month;
+            g_year = _year;
 
         }
 
@@ -50,6 +54,8 @@ namespace cal
                 _year -= 1;
             }
             showdays(_month, _year);
+            g_month = _month;
+            g_year = _year;
         }
 
         private void showdays(int month, int year)
@@ -59,6 +65,10 @@ namespace cal
             _year = year;
             string monthName = new DateTimeFormatInfo().GetMonthName(month);
             mois.Text = monthName + " " + year;
+            //add globl
+            g_month = month;
+            g_year= year;
+
             DateTime start = new DateTime(year, month, 1);
             int day = DateTime.DaysInMonth(year, month);
             int week = Convert.ToInt32(start.DayOfWeek.ToString("d"));

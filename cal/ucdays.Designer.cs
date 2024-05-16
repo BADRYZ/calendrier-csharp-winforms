@@ -61,6 +61,7 @@
             this.Name = "ucdays";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.Size = new System.Drawing.Size(158, 158);
+            this.Click += new System.EventHandler(this.ucdays_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
