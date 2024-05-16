@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.datefield = new System.Windows.Forms.TextBox();
-            this.serveurfield = new System.Windows.Forms.TextBox();
             this.labdate = new System.Windows.Forms.Label();
             this.labserv = new System.Windows.Forms.Label();
-            this.shiftfield = new System.Windows.Forms.TextBox();
             this.labshift = new System.Windows.Forms.Label();
             this.btncommit = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxShifts = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // datefield
@@ -43,13 +43,6 @@
             this.datefield.Name = "datefield";
             this.datefield.Size = new System.Drawing.Size(270, 29);
             this.datefield.TabIndex = 0;
-            // 
-            // serveurfield
-            // 
-            this.serveurfield.Location = new System.Drawing.Point(245, 166);
-            this.serveurfield.Name = "serveurfield";
-            this.serveurfield.Size = new System.Drawing.Size(270, 29);
-            this.serveurfield.TabIndex = 1;
             // 
             // labdate
             // 
@@ -68,13 +61,6 @@
             this.labserv.Size = new System.Drawing.Size(77, 25);
             this.labserv.TabIndex = 3;
             this.labserv.Text = "serveur";
-            // 
-            // shiftfield
-            // 
-            this.shiftfield.Location = new System.Drawing.Point(245, 256);
-            this.shiftfield.Name = "shiftfield";
-            this.shiftfield.Size = new System.Drawing.Size(270, 29);
-            this.shiftfield.TabIndex = 4;
             // 
             // labshift
             // 
@@ -95,17 +81,34 @@
             this.btncommit.UseVisualStyleBackColor = true;
             this.btncommit.Click += new System.EventHandler(this.btncommit_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(245, 166);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(270, 32);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // comboBoxShifts
+            // 
+            this.comboBoxShifts.FormattingEnabled = true;
+            this.comboBoxShifts.Location = new System.Drawing.Point(245, 257);
+            this.comboBoxShifts.Name = "comboBoxShifts";
+            this.comboBoxShifts.Size = new System.Drawing.Size(270, 32);
+            this.comboBoxShifts.TabIndex = 8;
+            // 
             // ajouter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 382);
+            this.Controls.Add(this.comboBoxShifts);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btncommit);
             this.Controls.Add(this.labshift);
-            this.Controls.Add(this.shiftfield);
             this.Controls.Add(this.labserv);
             this.Controls.Add(this.labdate);
-            this.Controls.Add(this.serveurfield);
             this.Controls.Add(this.datefield);
             this.Name = "ajouter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -119,11 +122,11 @@
         #endregion
 
         private System.Windows.Forms.TextBox datefield;
-        private System.Windows.Forms.TextBox serveurfield;
         private System.Windows.Forms.Label labdate;
         private System.Windows.Forms.Label labserv;
-        private System.Windows.Forms.TextBox shiftfield;
         private System.Windows.Forms.Label labshift;
         private System.Windows.Forms.Button btncommit;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxShifts;
     }
 }
